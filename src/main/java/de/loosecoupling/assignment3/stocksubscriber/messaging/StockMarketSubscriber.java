@@ -20,8 +20,8 @@ public class StockMarketSubscriber implements MessageListener {
 		MapMessage mapMessage = (MapMessage) message;
 		LOG.info("Got a StreamMessage from 'StockMarket'");
 		try {
-			LOG.info("Company Name: " + mapMessage.getStringProperty("CompanyName"));
-			LOG.info("Company Value: " + mapMessage.getStringProperty("CompanyValue"));
+			LOG.info("Company Name: " + mapMessage.getString("CompanyName"));
+			LOG.info("Company Value: " + mapMessage.getInt("CompanyValue"));
 		} catch (JMSException e) {
 			LOG.error(e.getMessage(), e);
 		}
