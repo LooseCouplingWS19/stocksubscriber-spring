@@ -23,7 +23,6 @@ public class StockMarketSubscriber implements MessageListener {
 	@Override
 	public void onMessage(Message message) {
 		MapMessage mapMessage = (MapMessage) message;
-		LOG.info("Got a StreamMessage from 'StockMarket'");
 		try {
 			processingService.processStockPrices(mapMessage);
 		} catch (JMSException e) {
